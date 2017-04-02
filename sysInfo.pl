@@ -11,7 +11,7 @@ sub hello_handler {
   my $request;
   my $string_value = "hello world";
   my $integer_value = "8675309";
-  my $cust_str = "CAROLYNE IS SMART";
+  my $cust_str = "this is a string";
 
   my $cpuinfo = qx(cat /proc/cpuinfo);
   my $PIDstatus = qx(cat /proc/1043/status);
