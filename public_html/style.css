@@ -1,0 +1,71 @@
+body{
+  background: #E37222;
+}
+.values{
+  width: 15%;
+  padding: 10px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  background: #07889B;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px black;
+}
+.columns {
+  width: 85%;
+  padding: 10px;
+  background: lightgrey;
+  border-radius: 10px;
+  border: solid 2px;
+  resize: vertical;
+  overflow: hidden;
+}
+#pdesc, #pcmd {
+  resize: both;
+}
+
+#wrapper{
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+}
+
+#sysInfo{
+  margin: 10px;
+  margin-right: 10px;
+  height: 100px;
+  border-radius: 15px;
+  border: solid 2px;
+  padding: 10px;
+  background: #66B9BF;
+  color: white;
+  box-shadow: 0 0 10px 3px black;
+  float: right;
+  width: 46%;
+  position: relative;
+}
+
+#monitor{
+  margin: 10px;
+  margin-right: 10px;
+  height: 100px;
+  border-radius: 15px;
+  border: solid 2px;
+  padding: 10px;
+  background: #66B9BF;
+  color: white;
+  box-shadow: 0 0 10px 3px black;
+  float: left;
+  width: 46%;
+}
+#header{
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 10px black;
+}
+br{
+  border: solid 2px green;
+}
+h4{
+  color: white;
+}
