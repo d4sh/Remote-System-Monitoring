@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <title> COMP 3000 - Remote Monitoring </title>
     <
     <link rel="stylesheet" href="./style.css"/>
@@ -13,34 +13,41 @@
   <body>
     <h1 id="header">Remote System Monitoring</h1>
     
-      <div id="monitor">
-      </div>
-      <div id="sysInfo">
-      </div>
-    
-    <div class="values" id="idwrapper">
-      <h4>Process ID</h4>
-      <div class="columns" id="pid"></div>
-    </div>
 
-    <div class="values" id="namewrapper">
-      <h4>Process Name</h4>
-      <div class="columns" id="pname"><pr></pr></div>
-    </div>
+		<div id="sysInfo">
+			<h4>System Information</h4>
+			System Description: Linux...
+			<br>
+			Total RAM: 5000TB!!!!
+		</div>
 
-    <div class="values" id="ramwrapper">
-      <h4>RAM</h4>
-      <div class="columns optionalcolumns" id="pram"><pr>View</pr></div>
-    </div>
+		<div class="values" id="monitorwrapper">
+			<h4>Monitoring</h4>
+			<div class="columns" id="monitorInfo">
+				Placeholder
+			</div>
+		</div>
 
-    <div class="values" id="cmdwrapper">
-      <h4>Path</h4>
-      <div class="columns optionalcolumns" id="pcmd"><pr>View</pr></div>
-    </div>
+    <div class="flexwrapper">
+		<div class="values" id="idwrapper">
+		  <h4>Process ID</h4>
+		  <div class="columns" id="pid"></div>
+		</div>
 
-    <div class="values" id="descwrapper">
-      <h4>Description</h4>
-      <div class="columns optionalcolumns" id="pdesc"><pr>View</pr></div>
+		<div class="values" id="namewrapper">
+		  <h4>Process Name</h4>
+		  <div class="columns" id="pname"><pr></pr></div>
+		</div>
+
+		<div class="values" id="ramwrapper">
+		  <h4>RAM</h4>
+		  <div class="columns optionalcolumns" id="pram"><pr>View</pr></div>
+		</div>
+
+		<div class="values" id="cmdwrapper">
+		  <h4>Path</h4>
+		  <div class="columns optionalcolumns" id="pcmd"><pr>View</pr></div>
+		</div>
     </div>
   </body>
 </html>

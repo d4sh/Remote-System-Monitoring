@@ -32,27 +32,31 @@ function handleRequest(req,res){
   //parse the url
   var urlObj = url.parse(req.url);
   var filename = ROOT+urlObj.pathname;
+	if (req.url == "/green-heartbeat.png") {
+     var img = fs.readFileSync('./green-heartbeat.png');
+     res.writeHead(200, {'Content-Type': 'image/png' });
+     res.end(img, 'binary');
+  } else {
+		//the callback sequence for static serving...
+		fs.stat(filename,function(err, stats){
+			if(err){   //try and open the file and handle the error, handle the error
+				res.writeHead(404);
+				res.end("404!!! File or folder not found")
+			}else{
+				if(stats.isDirectory()) filename="./index.html";
 
-  //the callback sequence for static serving...
-  fs.stat(filename,function(err, stats){
-    if(err){   //try and open the file and handle the error, handle the error
-      res.writeHead(404);
-      res.end("404!!! File or folder not found")
-    }else{
-      if(stats.isDirectory()) filename="./index.html";
-
-      fs.readFile(filename,"utf8",function(err, data){
-        if(err){
-          res.writeHead(500);
-          res.end("500!!! Server error")
-        }else{
-          res.writeHead(200,{'content-type':mime.lookup(filename)||'text/html'});
-          res.end(data);
-        }
-      });
-    }
-  });
-
+				fs.readFile(filename,"utf8",function(err, data){
+					if(err){
+						res.writeHead(500);
+						res.end("500!!! Server error")
+					}else{
+						res.writeHead(200,{'content-type':mime.lookup(filename)||'text/html'});
+						res.end(data);
+					}
+				});
+			}
+		});
+	}
 };
 
 io.on("connection", function(socket){
