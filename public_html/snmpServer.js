@@ -102,7 +102,7 @@ io.on("connection", function(socket){
   socket.on("monitorProc", function(data) {
 		
 		const execFile = require("child_process").execFile;
-		const child = execFile('bash',  ['cpumon.sh', data.pname, data.ulimit], (error, stdout, stderr) => {
+		const child = execFile('bash',  ['cpumon.sh', data.pid, data.ulimit], (error, stdout, stderr) => {
 			if (stderr) {
 				console.log(stderr);
 			}

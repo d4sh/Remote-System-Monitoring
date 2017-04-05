@@ -1,11 +1,9 @@
 # $1 = name of proc
-procid=`pidof $1`
-
-kill $procid
+kill $1
 
 sleep 1
 
-if [ -z "`pidof $1`" ];
+if [ -e `/proc/$1` ];
 then
 	echo "$1 murdered!!"
 else

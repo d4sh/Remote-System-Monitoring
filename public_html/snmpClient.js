@@ -5,23 +5,29 @@ $(document).ready(function(){
   // RAM, Path, Desc
   $(".optionalcolumns").click(columnToggle);
   
-  socket.on("connect", function(){
-    socket.emit("getValues", "");
-	});
-  
-  socket.on("getValues", initValues);
-  
-  socket.on("monitorProc", function(data) {
-    if (confirm(data + "\nDo you want to kill the process?")){
-      socket.emit("akheeelyou", data);
-    }
-  });
-  
-  socket.on("akheeelyou", function(data){
-    alert(data);
-  });
 });
 
+socket.on("connect", function(){
+	socket.emit("getValues", "");
+});
+
+socket.on("getValues", initValues);
+
+socket.on("monitorProc", function(data) {
+	if (confirm(data + "\nDo you want to kill the process?")){
+	  socket.emit("akheeelyou", data);
+	}
+});
+
+socket.on("akheeelyou", function(data){
+	alert(data);
+	removeElement(data.split(" ")[0]);
+});
+function removeElement(ele) {
+	var temp = "#"+ele;
+	console.log(temp);
+	$(temp).remove();
+}
 function columnToggle() {
   console.log("Yes! "+ $(this).attr('id') + " was clicked");
 }
@@ -41,7 +47,7 @@ function initValues(data) {
      idp.attr("class", data.pids[i]);
      namep.attr("class", data.pids[i]);
      $("#pid").append(idp);
-     $(namep).dblclick(startMonitoring);
+     $(idp).dblclick(startMonitoring);
      $("#pname").append(namep);
   }
 }
@@ -59,10 +65,12 @@ function outProc() {
 }
 
 function startMonitoring() {
-    var procname = $(this).text();
-    console.log("Double Click works: " + procname);
-    var limit = prompt("Enter CPU% limit for " + procname + ": ");
-    $("#monitor").append("Monitoring process " + procname + " with limit " + limit + "%");
-    $("#monitor").append($("<br>"));
-    socket.emit("monitorProc", {pname: procname, ulimit: limit});
+    var procid = $(this).text();
+    var limit = prompt("Enter CPU% limit for " + procid + ": ");
+    var pmon = $("<p>");
+    pmon.attr("id", procid);
+    pmon.html("Process " + procid + " with CPU limit " + limit + "%");
+    $("#monitorInfo").append(pmon);
+    //$("#monitorInfo").append($("<br>"));
+    socket.emit("monitorProc", {pid: procid, ulimit: limit});
 }

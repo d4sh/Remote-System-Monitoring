@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title> COMP 3000 - Remote Monitoring </title>
-    <
     <link rel="stylesheet" href="./style.css"/>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,15 +15,20 @@
 
 		<div id="sysInfo">
 			<h4>System Information</h4>
-			System Description: Linux...
-			<br>
-			Total RAM: 5000TB!!!!
+			<div id="infopanel">
+				<label>System Description: </label> <label id="desc">Linux remote_snmp 4.4.50-v7+ #970 SMP Mon Feb 20 19:18:29 GMT 2017 armv7l</label>
+				<br>
+				<label>CPU%: </label> <label id="cpup">something</label>
+				<br>
+				<label>RAM used: </label> <label id="ramu">something</label>
+				<br>
+				<label>RAM total: </label> <label id="ramt">something</label>
+			</div>
 		</div>
 
 		<div class="values" id="monitorwrapper">
 			<h4>Monitoring</h4>
 			<div class="columns" id="monitorInfo">
-				Placeholder
 			</div>
 		</div>
 

@@ -7,7 +7,7 @@ body{
 }
 
 .values{
-  width: 15%;
+  width: 18%;
   padding: 10px;
   float: left;
   margin: 10px;
@@ -18,7 +18,7 @@ body{
 }
 
 .columns {
-  width: 90%;
+  width: 94%;
   padding-left: 10px;
   background: lightgrey;
   border-radius: 10px;
@@ -36,8 +36,7 @@ body{
 }
 
 #monitorwrapper{
-  width: 20%;
-  margin-right: 50px;
+  width: 24%;
   height: 100%;
 }
 
@@ -54,7 +53,9 @@ body{
   border: solid 2px;
   padding-left: 10px;
   background-size: contain;
+  background-repeat: no-repeat;
   background-image:url('./green-heartbeat.png');
+  background-position: center right;
   background-color: black;
   color: white;
   box-shadow: 0 0 10px 3px black;
@@ -64,6 +65,7 @@ body{
 #sysInfo h4{
   text-align: center;
 }
+
 
 #header{
   text-align: center;

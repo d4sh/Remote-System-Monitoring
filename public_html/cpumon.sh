@@ -27,7 +27,7 @@ else
   debug=""
 fi
 
-procpid=`pidof $1`
+procpid=$1
 typeset -i limit=$2
 
 # process existence check
