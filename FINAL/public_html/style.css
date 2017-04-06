@@ -1,0 +1,84 @@
+body{
+  background: #E37222;
+}
+
+.flexwrapper{
+  display: flex;
+}
+
+.values{
+  width: 18%;
+  padding: 10px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  background: #07889B;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px black;
+}
+
+.columns {
+  width: 94%;
+  padding-left: 10px;
+  background: lightgrey;
+  border-radius: 10px;
+  border: solid 2px;
+  resize: vertical;
+  overflow: hidden;
+}
+
+#cmdwrapper{
+  flex-grow: 100;
+}
+#pcmd {
+  resize: both;
+  width: 96%;
+}
+
+#monitorwrapper{
+  width: 20%;
+  height: 100%;
+}
+
+#monitorInfo {
+  resize: none;
+  height: 60%;
+  width: 94%;
+}
+
+#sysInfo{
+  margin: 10px;
+  height: 150px;
+  border-radius: 15px;
+  border: solid 2px;
+  padding-left: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image:url('./green-heartbeat.png');
+  background-position: center right;
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 10px 3px black;
+  float: top;
+}
+
+#sysInfo h4{
+  text-align: center;
+}
+
+
+#header{
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 10px black;
+}
+br{
+  border: solid 2px green;
+}
+h4{
+  color: white;
+}
+
+p{
+  word-wrap: break-word;
+}

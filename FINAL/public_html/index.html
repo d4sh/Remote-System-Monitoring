@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> COMP 3000 - Remote Monitoring </title>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./snmpClient.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <h1 id="header">Remote System Monitoring</h1>
+    
+
+		<div id="sysInfo">
+			<h4>System Information</h4>
+			<div id="infopanel">
+				<label>System Description: </label> <label id="desc"></label>
+				<br>
+				<label>RAM used: </label> <label id="ramu"></label>
+				<br>
+				<label>RAM free: </label> <label id="ramf"></label>
+				<br>
+				<label>RAM total: </label> <label id="ramt"></label>
+			</div>
+		</div>
+
+		<div class="values" id="monitorwrapper">
+			<h4>Process CPU% Monitoring</h4>
+			<div class="columns" id="monitorInfo">
+			</div>
+		</div>
+
+    <div class="flexwrapper">
+		<div class="values" id="idwrapper">
+		  <h4>Process ID</h4>
+		  <div class="columns" id="pid"></div>
+		</div>
+
+		<div class="values" id="namewrapper">
+		  <h4>Process Name</h4>
+		  <div class="columns" id="pname"></div>
+		</div>
+
+		<div class="values" id="ramwrapper">
+		  <h4>RAM</h4>
+		  <div class="columns optionalcolumns" id="pram"></div>
+		</div>
+
+		<div class="values" id="cmdwrapper">
+		  <h4>Path</h4>
+		  <div class="columns optionalcolumns" id="pcmd"></div>
+		</div>
+    </div>
+  </body>
+</html>
