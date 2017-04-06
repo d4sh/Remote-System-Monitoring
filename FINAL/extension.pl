@@ -51,7 +51,7 @@ sub sysVals {
 	my $free = qx(cat /proc/meminfo| awk '/MemFree: /{print \$2/1024}');
 	$resultStr .= $tot;
 	$resultStr .= $free;
-	$resultStr .= ($tot - $free);	
+	$resultStr .= ($tot - $free);
 
 	return $resultStr;
 }
