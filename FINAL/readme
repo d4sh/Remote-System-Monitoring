@@ -1,1 +1,75 @@
+Remote System Monitoring using SNMP
+
+Authors:
+Akhil Dalal git: d4sh
+Carolyne Pelletier
+
+Install net-SNMP on OS
+  https://sourceforge.net/projects/net-snmp/
+  Extract the file to a location
+
+Initial Configuration  
+  ./configure 
+    Version 2
+    Default for the rest 
+
+Install the perl library for developers 
+  sudo apt-get install libperl-dev 
+
+Compile 
+  sudo make
+
+Install 
+  sudo make install 
+
+Export below Path
+  echo export LD_LIBRARY_PATH=/usr/local/lib >> .bashrc
+
+Navigate to perl folder located: /Desktop/project/net-snmp-5.7.3/perl
+  sudo perl Makefile.PL
+  sudo make
+  sudo make install
+
+Installation of snmpd (daemon)
+  sudo apt-get install snmpd   
+
+Configure the snmpd
+  sudo nano /etc/snmp/snmpd.conf
+    Under Agent Behaviour, 
+      comment out Local Host Only (second line) 
+        #agentAddress upd:127.0.0.1:161
+      Uncomment out 4th line to allow connections from other machines 
+        agentAddress upd::161,udp6:[::1]:161
+    Under Access Control,
+      Uncomment out 3rd line to give you full access to MIBs
+        rocommunity public localhost
+    Under Extending The Agent (anywhere)
+      Make a perl file in /usr/share/snmp/[insertName].pl
+      perl do “/path/[to perl script file]”
+      "/usr/share/snmp/[insertName].pl"
+
+Installation of MIBS
+  sudo apt-get install snmp-mibs-downloader
+
+Restart SNMPD server so it relaods the changes we made in configuration file
+  sudo service snmpd restart
+
+Check with a walk on system OID
+  snmpwalk -v 2c -c public localhost system 
+
+Install Node.js (software necessary for the Manager)
+  sudo apt-get install curl 
+  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  sudo apt-get install nodejs
+  Navigate to where you want to install npm net-snmp
+    npm install net-snmp
+
+Check node installation
+  node --version 
+  (version number will return if installed)
+
+Remember to restart your snmpd server if you change your configuration file
+  sudo service snmpd restart 
+
+
 
