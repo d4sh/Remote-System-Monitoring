@@ -8,15 +8,14 @@ File Setup:
 </ul>
 
 Usage:
-<ul>
+
+
 add snmp session with your agent using credentials in snmpServer.js
+<ul>
   <li>var sessionName = snmp.createSession("agent ip", "community"); 
 </ul>
 
-Make sure your SNMP Agent is running:
-<ul>
-<li>sudo service snmpd start</li>
-</ul>
+Make sure your SNMP Agent is running: sudo service snmpd start
   
 To check if your SNMP Agent is running: ps -ef | grep snmpd
   
