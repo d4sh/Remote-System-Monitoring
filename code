@@ -1,9 +1,0 @@
-	my $resultStr = "";
-  my $pids = qx(ps -A -o pid);
-  my @arr = split(/\s+/, $pids);
-  $size = scalar @arr;
-  for (my $i = 2; $i < $size; $i++)
-  {
-    $name =  qx(cat /proc/$arr[$i]/status | awk '/Name:/{print \$2}');
-    $resultStr .= $arr[$i]." ".$name."\n";
-  }
