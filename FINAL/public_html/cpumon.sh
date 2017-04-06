@@ -10,7 +10,7 @@
 #
 # Author: Miguel Ángel Molina Molina
 # Licence: GPL v.2
-
+#
 # Parameter check
 # [debug] parameter is optional and can be anything. If it exists, the script produces output to the screen for debugging purposes.
 if [ $# -lt 2 -o $# -gt 3 ];

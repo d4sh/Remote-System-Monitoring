@@ -21,6 +21,9 @@ socket.on("getValues", initValues);
 socket.on("monitorProc", function(data) {
 	if (confirm(data + "\nDo you want to kill the process?")){
 	  socket.emit("akheeelyou", data);
+	} else {
+		var temp = data.split(" ");
+		removeElement(data.split(" ")[1]);
 	}
 });
 
@@ -50,9 +53,9 @@ function initValues(data) {
   }
   // system info
   $("#desc").html(data.desc);
-  $("#ramu").html(data.usedram);
-  $("#ramf").html(data.freeram);
-  $("#ramt").html(data.totalram);
+  $("#ramu").html(data.usedram + " MiB");
+  $("#ramf").html(data.freeram + " MiB");
+  $("#ramt").html(data.totalram + " MiB");
   // procs
   $("#pid").html("");
   $("#pname").html("");
@@ -66,7 +69,7 @@ function initValues(data) {
 	 var namep = $("<p>");
 	 namep.html(data.pnames[i]);
 	 var ramp = $("<p>");
-	 ramp.append(data.prams[i]);
+	 ramp.append(data.prams[i] + " MiB");
 	 idp.hover(onProc, outProc);
 	 namep.hover(onProc, outProc);
 	 ramp.hover(onProc, outProc);

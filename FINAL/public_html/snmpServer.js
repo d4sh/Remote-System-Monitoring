@@ -5,7 +5,7 @@ var _ = require('underscore');
 var snmp = require('net-snmp');
 var fs = require('fs');
         
-// Create server
+// Create server12066
 var server = http.createServer(handleRequest);
 
 // socket.io listen on server
